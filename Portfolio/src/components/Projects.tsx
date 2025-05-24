@@ -3,6 +3,7 @@ import { useState } from "react";
 
 import { Swiper, SwiperSlide } from "swiper/react";
 import { EffectCoverflow, Pagination, Autoplay } from "swiper/modules";
+import type { Swiper as SwiperClass } from "swiper/types";
 
 const Projects = () => {
   const projects = [
@@ -28,7 +29,11 @@ const Projects = () => {
   const [activeIndex, setActiveIndex] = useState(0);
   const progressCircle = useRef<SVGSVGElement | null>(null);
   const progressContent = useRef<HTMLSpanElement | null>(null);
-  const onAutoplayTimeLeft = (s: any, time: number, progress: number) => {
+  const onAutoplayTimeLeft = (
+    _swiper: SwiperClass,
+    time: number,
+    progress: number
+  ) => {
     if (progressCircle.current) {
       progressCircle.current.style.setProperty("--progress", `${1 - progress}`);
     }
