@@ -3,5 +3,7 @@
 @import 'swiper/css/effect-coverflow';
 @import 'swiper/css/pagination';
 body{
-  @apply bg-[#EDEDEF] text-[#3D3B39] font-normal;
+  background-color: #EDEDEF;
+  color: #3D3B39;
+  font-weight: 400;
 }
